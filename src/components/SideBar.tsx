@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useEffect, useState } from "react";
 
 import { api } from '../services/api';
@@ -40,4 +41,8 @@ export function SideBar( { handleClickButton, selectedGenreId }:SideBarProps ) {
       </nav>
   )
 
+=======
+export function SideBar() {
+  
+>>>>>>> component-content
 }
