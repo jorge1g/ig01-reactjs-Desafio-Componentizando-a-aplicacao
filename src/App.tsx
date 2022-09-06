@@ -1,14 +1,8 @@
 import { useEffect, useState } from 'react';
 
-import { Button } from './components/Button';
-
-<<<<<<< HEAD
 import { SideBar } from './components/SideBar';
-// import { Content } from './components/Content';
-=======
-// import { SideBar } from './components/SideBar';
+
 import { Content } from './components/Content';
->>>>>>> component-content
 
 import { api } from './services/api';
 
@@ -35,11 +29,6 @@ export function App() {
   const [selectedGenreId, setSelectedGenreId] = useState(1);
   const [selectedGenre, setSelectedGenre] = useState<GenreResponseProps>({} as GenreResponseProps);
 
-<<<<<<< HEAD
-  const [movies, setMovies] = useState<MovieProps[]>([]);
-  const [selectedGenre, setSelectedGenre] = useState<GenreResponseProps>({} as GenreResponseProps);
-
-=======
   const [genres, setGenres] = useState<GenreResponseProps[]>([]);
 
   useEffect(() => {
@@ -47,7 +36,6 @@ export function App() {
       setGenres(response.data);
     });
   }, []);
->>>>>>> component-content
 
   useEffect(() => {
     api.get<GenreResponseProps>(`genres/${selectedGenreId}`).then(response => {
@@ -61,25 +49,7 @@ export function App() {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'row' }}>
-<<<<<<< HEAD
       <SideBar selectedGenreId={selectedGenreId} handleClickButton={handleClickButton} />
-=======
-      <nav className="sidebar">
-        <span>Watch<p>Me</p></span>
-
-        <div className="buttons-container">
-          {genres.map(genre => (
-            <Button
-              key={String(genre.id)}
-              title={genre.title}
-              iconName={genre.name}
-              onClick={() => handleClickButton(genre.id)}
-              selected={selectedGenreId === genre.id}
-            />
-          ))}
-        </div>
-      </nav>
->>>>>>> component-content
 
       <Content selectedGenre={ selectedGenre} selectedGenreId={selectedGenreId} />
 
